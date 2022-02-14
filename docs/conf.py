@@ -31,6 +31,10 @@ extensions = [
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "CircuitPython": ("https://docs.circuitpython.org/en/latest/", None),
+    "Adafruit_CircuitPython_Requests": (
+        "https://docs.circuitpython.org/projects/requests/en/latest/",
+        None,
+    ),
 }
 
 # Show the docstring from both the class and its __init__() method.
