@@ -2,5 +2,3 @@
 # SPDX-FileCopyrightText: Copyright (c) 2022 Dan Halbert for Adafruit Industries
 #
 # SPDX-License-Identifier: MIT
-
-Adafruit-Blinka
