@@ -8,13 +8,13 @@
 Types needed for type annotation that are not in `typing`
 
 
-* Author(s): Alec Delaney, Dan Halbert
+* Author(s): Alec Delaney, Dan Halbert, Randy Hudson
 """
 
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
-from typing import Union
+from typing import Union, Protocol, Optional
 from array import array
 
 ReadableBuffer = Union[bytes, bytearray, memoryview, array]
@@ -31,3 +31,25 @@ WriteableBuffer = Union[bytearray, memoryview, array]
   * `memoryview`
   * `array.array`
 """
+
+
+class ByteStream(Protocol):
+    """Protocol for basic I/O operations on a byte stream.
+    Classes which implement this protocol include
+    * `io.BytesIO`
+    * `io.FileIO` (for a file open in binary mode)
+    * `busio.UART`
+    * `usb_cdc.Serial`
+    """
+
+    def read(self, count: Optional[int] = None, /) -> Optional[bytes]:
+        """Read ``count`` bytes from the stream.
+        If ``count`` bytes are not immediately available,
+        or if the parameter is not specified in the call,
+        the outcome is implementation-dependent.
+        """
+        ...
+
+    def write(self, buf: ReadableBuffer, /) -> Optional[int]:
+        """Write the bytes in ``buf`` to the stream."""
+        ...
