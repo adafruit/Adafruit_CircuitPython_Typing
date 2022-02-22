@@ -43,13 +43,13 @@ class ByteStream(Protocol):
     """
 
     def read(self, count: Optional[int] = None, /) -> Optional[bytes]:
-        """Read `count` bytes from the stream.
-        If `count` bytes are not immediately available,
+        """Read ``count`` bytes from the stream.
+        If ``count`` bytes are not immediately available,
         or if the parameter is not specified in the call,
         the outcome is implementation-dependent.
         """
         ...
 
     def write(self, buf: ReadableBuffer, /) -> Optional[int]:
-        """Write the bytes in `buf` to the stream."""
+        """Write the bytes in ``buf`` to the stream."""
         ...
