@@ -14,7 +14,15 @@ Types needed for type annotation that are not in `typing`
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
-from typing import Union, Protocol, Optional
+
+from typing import Union, Optional
+
+# Protocol was introduced in Python 3.8.
+try:
+    from typing import Protocol
+except ImportError:
+    from typing_extensions import Protocol
+
 from array import array
 
 ReadableBuffer = Union[bytes, bytearray, memoryview, array]
@@ -42,7 +50,8 @@ class ByteStream(Protocol):
     * `usb_cdc.Serial`
     """
 
-    def read(self, count: Optional[int] = None, /) -> Optional[bytes]:
+    # Should be `, /)`, but not available in Python 3.7.
+    def read(self, count: Optional[int] = None) -> Optional[bytes]:
         """Read ``count`` bytes from the stream.
         If ``count`` bytes are not immediately available,
         or if the parameter is not specified in the call,
@@ -50,6 +59,7 @@ class ByteStream(Protocol):
         """
         ...
 
-    def write(self, buf: ReadableBuffer, /) -> Optional[int]:
+    # Should be `, /)`, but not available in Python 3.7.
+    def write(self, buf: ReadableBuffer) -> Optional[int]:
         """Write the bytes in ``buf`` to the stream."""
         ...
