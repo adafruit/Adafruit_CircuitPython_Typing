@@ -2,3 +2,5 @@
 # SPDX-FileCopyrightText: Copyright (c) 2022 Dan Halbert for Adafruit Industries
 #
 # SPDX-License-Identifier: MIT
+
+typing_extensions; python_version <= '3.7'
