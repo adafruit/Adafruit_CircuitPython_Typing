@@ -27,6 +27,7 @@ from array import array
 
 ReadableBuffer = Union[bytes, bytearray, memoryview, array]
 """Classes that implement the readable buffer protocol
+  * `str`
   * `bytes`
   * `bytearray`
   * `memoryview`
