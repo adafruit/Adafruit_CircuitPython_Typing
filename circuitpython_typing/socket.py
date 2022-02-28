@@ -22,6 +22,21 @@ except ImportError:
 
 # Based on https://github.com/python/typeshed/blob/master/stdlib/_socket.pyi
 
+__all__ = [
+    # alphabetized
+    "CircuitPythonSocketType",
+    "CommonCircuitPythonSocketType",
+    "CommonSocketType",
+    "InterfaceType",
+    "LegacyCircuitPythonSocketType",
+    "SSLContextType",
+    "SocketType",
+    "SocketpoolModuleType",
+    "StandardPythonSocketType",
+    "SupportsRecvInto",
+    "SupportsRecvWithFlags",
+]
+
 
 class CommonSocketType(Protocol):
     """Describes the common structure every socket type must have."""

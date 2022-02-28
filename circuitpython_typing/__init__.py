@@ -14,31 +14,45 @@ Types needed for type annotation that are not in `typing`
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
-
+import array
 from typing import Union, Optional
 
 # Protocol was introduced in Python 3.8.
 try:
-    from typing import Protocol
+    from typing import Protocol  # pylint: disable=ungrouped-imports
 except ImportError:
     from typing_extensions import Protocol
 
-from array import array
+# Lists below are alphabetized.
 
-ReadableBuffer = Union[bytes, bytearray, memoryview, array]
-"""Classes that implement the readable buffer protocol
-  * `bytes`
-  * `bytearray`
-  * `memoryview`
-  * `array.array`
-"""
+# More added in each conditional import.
+__all__ = [
+    "Alarm",
+    "AudioSample",
+    "ByteStream",
+    "FrameBuffer",
+    "ReadableBuffer",
+    "WriteableBuffer",
+]
 
-WriteableBuffer = Union[bytearray, memoryview, array]
-"""Classes that implement the writeable buffer protocol
-  * `bytearray`
-  * `memoryview`
-  * `array.array`
-"""
+ReadableBuffer = Union[
+    array.array,
+    bytearray,
+    bytes,
+    memoryview,
+    "rgbmatrix.RGBMatrix",
+    "ulab.numpy.ndarray",
+]
+"""Classes that implement the readable buffer protocol."""
+
+WriteableBuffer = Union[
+    array.array,
+    bytearray,
+    memoryview,
+    "rgbmatrix.RGBMatrix",
+    "ulab.numpy.ndarray",
+]
+"""Classes that implement the writeable buffer protocol."""
 
 
 class ByteStream(Protocol):
@@ -63,3 +77,25 @@ class ByteStream(Protocol):
     def write(self, buf: ReadableBuffer) -> Optional[int]:
         """Write the bytes in ``buf`` to the stream."""
         ...
+
+
+# These types may not be in adafruit-blinka, so use the string form instead of a resolved name.
+
+AudioSample = Union[
+    "audiocore.WaveFile",
+    "audiocore.RawSample",
+    "audiomixer.Mixer",
+    "audiomp3.MP3Decoder",
+    "synthio.MidiTrack",
+]
+"""Classes that implement the audiosample protocol.
+You can play these back with `audioio.AudioOut`, `audiobusio.I2SOut` or `audiopwmio.PWMAudioOut`.
+"""
+
+FrameBuffer = Union["rgbmatrix.RGBMatrix"]
+"""Classes that implement the framebuffer protocol."""
+
+Alarm = Union["alarm.pin.PinAlarm", "alarm.time.TimeAlarm"]
+"""Classes that implement alarms for sleeping and asynchronous notification.
+You can use these alarms to wake up from light or deep sleep.
+"""
