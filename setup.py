@@ -56,4 +56,8 @@ setup(
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     packages=["circuitpython_typing"],
+    # Make the types available for mypy type checking. See PEP 561.
+    package_data={
+        "circuitpython_typing": ["py.typed"],
+    },
 )
