@@ -18,6 +18,7 @@ except ImportError:
     from typing_extensions import Protocol
 
 
+# pylint: disable=too-few-public-methods
 class I2CDeviceDriver(Protocol):
     """Describes classes that are drivers utilizing `I2CDevice`"""
 
