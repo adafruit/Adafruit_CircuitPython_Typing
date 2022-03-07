@@ -17,6 +17,7 @@ try:
 except ImportError:
     from typing_extensions import Protocol
 
+
 class I2CDeviceDriver(Protocol):
     """Describes classes that are drivers utilizing `I2CDevice`"""
 
