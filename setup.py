@@ -39,7 +39,10 @@ setup(
     # Author details
     author="Adafruit Industries",
     author_email="circuitpython@adafruit.com",
-    install_requires=["typing_extensions; python_version <= '3.7'"],
+    install_requires=[
+        "typing_extensions; python_version <= '3.7'",
+        "adafruit-circuitpython-busdevice",
+    ],
     # Choose your license
     license="MIT",
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
