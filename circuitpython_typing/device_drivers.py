@@ -9,7 +9,7 @@ Type annotation definitions for device drivers. Used for `adafruit_register`.
 * Author(s): Alec Delaney
 """
 
-from adafruit_bus_device import I2CDevice
+from adafruit_bus_device.i2c_device import I2CDevice
 
 # # Protocol was introduced in Python 3.8.
 try:
