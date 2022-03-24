@@ -1,6 +1,22 @@
 Introduction
 ============
 
+.. image:: https://readthedocs.org/projects/adafruit-circuitpython-typing/badge/?version=latest
+    :target: https://docs.circuitpython.org/projects/typing/en/latest/
+    :alt: Documentation Status
+
+.. image:: https://img.shields.io/discord/327254708534116352.svg
+    :target: https://adafru.it/discord
+    :alt: Discord
+
+.. image:: https://github.com/adafruit/Adafruit_CircuitPython_Typing/workflows/Build%20CI/badge.svg
+    :target: https://github.com/adafruit/Adafruit_CircuitPython_Typing/actions
+    :alt: Build Status
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code Style: Black
+
 Definitions not in the standard `typing` module that are
 needed for type annotation of CircuitPython code.
 
