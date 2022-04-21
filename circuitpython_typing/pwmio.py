@@ -13,9 +13,10 @@ Type annotation definitions for PWMOut where Blinka doesn't otherwise define it.
 
 # # Protocol was introduced in Python 3.8.
 try:
-    from typing import Union, Tuple, Protocol
+    from typing import Protocol
 except ImportError:
     from typing_extensions import Protocol
+
 
 class PWMOut(Protocol):
     """Protocol that implements, at the bare minimum, the `duty_cycle` property"""
