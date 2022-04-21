@@ -6,8 +6,7 @@
 `circuitpython_typing.led`
 ================================================================================
 
-Type annotation definitions for device drivers. Used for where LEDs are
-type annotated.
+Type annotation definitions for LEDs.
 
 * Author(s): Alec Delaney
 """
