@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: https://readthedocs.org/projects/adafruit-circuitpython-typing/badge/?version=latest
-    :target: https://docs.circuitpython.org/projects/typing/en/latest/
+    :target: https://docs.circuitpython.org/projects/adafruit-circuitpython-typing/en/latest/
     :alt: Documentation Status
 
 .. image:: https://github.com/adafruit/Adafruit_CircuitPython_Bundle/blob/main/badges/adafruit_discord.svg
