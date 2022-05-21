@@ -17,6 +17,7 @@ try:
 except ImportError:
     from typing_extensions import Protocol
 
+
 class ROValueIO(Protocol):
     """Hardware objects, like `analogio.AnalogIn`, that have read-only
     ``value`` properties/attributes.
@@ -27,6 +28,7 @@ class ROValueIO(Protocol):
         """Value property, that may return an `int` or `float` depending
         on the specifics of the class.
         """
+
 
 class ValueIO(Protocol):
     """Hardware objects, like `analogio.AnalogOut`, that have read and
