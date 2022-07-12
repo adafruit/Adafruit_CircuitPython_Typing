@@ -12,6 +12,7 @@ Type annotation definitions for LEDs.
 """
 
 # Protocol was introduced in Python 3.8, TypeAlias in 3.10
+from typing import Union, Tuple
 from typing_extensions import Protocol, TypeAlias
 
 ColorBasedColorUnion: TypeAlias = Union[int, Tuple[int, int, int]]
