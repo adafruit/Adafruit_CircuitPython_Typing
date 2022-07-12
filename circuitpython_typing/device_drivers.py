@@ -10,12 +10,7 @@ Type annotation definitions for device drivers. Used for `adafruit_register`.
 """
 
 from adafruit_bus_device.i2c_device import I2CDevice
-
-# # Protocol was introduced in Python 3.8.
-try:
-    from typing import Protocol
-except ImportError:
-    from typing_extensions import Protocol
+from typing_extensions import Protocol  # Safety import for Python 3.7
 
 
 # pylint: disable=too-few-public-methods
