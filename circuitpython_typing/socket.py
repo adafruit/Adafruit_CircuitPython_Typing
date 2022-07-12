@@ -13,11 +13,8 @@ from ssl import SSLContext
 from types import ModuleType
 from typing import Any, Optional, Tuple, Union
 
-# Protocol was introduced in Python 3.8.
-try:
-    from typing import Protocol
-except ImportError:
-    from typing_extensions import Protocol
+# Protocol was introduced in Python 3.8, TypeAlias in 3.10
+from typing_extensions import Protocol, TypeAlias
 
 
 # Based on https://github.com/python/typeshed/blob/master/stdlib/_socket.pyi
@@ -120,7 +117,7 @@ class StandardPythonSocketType(
         ...
 
 
-SocketType = Union[
+SocketType: TypeAlias = Union[
     LegacyCircuitPythonSocketType,
     CircuitPythonSocketType,
     StandardPythonSocketType,
@@ -138,4 +135,4 @@ class InterfaceType(Protocol):
         ...
 
 
-SSLContextType = Union[SSLContext, "_FakeSSLContext"]
+SSLContextType: TypeAlias = Union[SSLContext, "_FakeSSLContext"]

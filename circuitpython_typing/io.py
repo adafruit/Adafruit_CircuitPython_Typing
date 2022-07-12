@@ -12,10 +12,7 @@ Type annotation definitions for IO-related objects
 """
 
 # Protocol was introduced in Python 3.8.
-try:
-    from typing import Protocol
-except ImportError:
-    from typing_extensions import Protocol
+from typing_extensions import Protocol
 
 
 class ROValueIO(Protocol):

@@ -12,12 +12,7 @@ Type annotation definitions for PIL Images.
 """
 
 from typing import Tuple
-
-# Protocol was introduced in Python 3.8.
-try:
-    from typing import Protocol
-except ImportError:
-    from typing_extensions import Protocol
+from typing_extensions import Protocol  # Safety import for Python 3.7
 
 
 class PixelAccess(Protocol):
