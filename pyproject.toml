@@ -37,7 +37,7 @@ classifiers = [
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools]
-packages = ["adafruit_typing"]
+packages = ["circuitpython_typing"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
