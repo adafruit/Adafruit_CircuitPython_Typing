@@ -16,12 +16,7 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
 import array
 from typing import Union, Optional
-
-# Protocol was introduced in Python 3.8.
-try:
-    from typing import Protocol  # pylint: disable=ungrouped-imports
-except ImportError:
-    from typing_extensions import Protocol
+from typing_extensions import Protocol, TypeAlias  # Safety import for Python 3.7
 
 # Lists below are alphabetized.
 
@@ -35,7 +30,7 @@ __all__ = [
     "WriteableBuffer",
 ]
 
-ReadableBuffer = Union[
+ReadableBuffer: TypeAlias = Union[
     array.array,
     bytearray,
     bytes,
@@ -45,7 +40,7 @@ ReadableBuffer = Union[
 ]
 """Classes that implement the readable buffer protocol."""
 
-WriteableBuffer = Union[
+WriteableBuffer: TypeAlias = Union[
     array.array,
     bytearray,
     memoryview,
@@ -81,7 +76,7 @@ class ByteStream(Protocol):
 
 # These types may not be in adafruit-blinka, so use the string form instead of a resolved name.
 
-AudioSample = Union[
+AudioSample: TypeAlias = Union[
     "audiocore.WaveFile",
     "audiocore.RawSample",
     "audiomixer.Mixer",
@@ -92,10 +87,10 @@ AudioSample = Union[
 You can play these back with `audioio.AudioOut`, `audiobusio.I2SOut` or `audiopwmio.PWMAudioOut`.
 """
 
-FrameBuffer = Union["rgbmatrix.RGBMatrix"]
+FrameBuffer: TypeAlias = Union["rgbmatrix.RGBMatrix"]
 """Classes that implement the framebuffer protocol."""
 
-Alarm = Union["alarm.pin.PinAlarm", "alarm.time.TimeAlarm"]
+Alarm: TypeAlias = Union["alarm.pin.PinAlarm", "alarm.time.TimeAlarm"]
 """Classes that implement alarms for sleeping and asynchronous notification.
 You can use these alarms to wake up from light or deep sleep.
 """
