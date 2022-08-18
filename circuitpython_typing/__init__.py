@@ -11,7 +11,7 @@ Types needed for type annotation that are not in `typing`
 * Author(s): Alec Delaney, Dan Halbert, Randy Hudson
 """
 
-__version__ = "0.0.0-auto.0"
+__version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
 import array
