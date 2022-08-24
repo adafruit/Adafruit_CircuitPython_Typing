@@ -51,7 +51,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Adafruit CircuitPython circuitpython_typing Library"
-creation_year = "2022
+creation_year = "2022"
 current_year = str(datetime.datetime.now().year)
 year_duration = (
     current_year
