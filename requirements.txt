@@ -3,6 +3,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-typing_extensions~=4.0
+Adafruit-Blinka
 adafruit-circuitpython-busdevice
 adafruit-circuitpython-requests
+typing_extensions~=4.0
