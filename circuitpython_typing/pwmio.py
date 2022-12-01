@@ -21,8 +21,8 @@ class PWMOut(Protocol):
     @property
     def duty_cycle(self) -> int:
         """The duty cycle as a ratio using 16-bits"""
-        ...
 
+    # pylint: disable=no-self-use,unused-argument
     @duty_cycle.setter
     def duty_cycle(self, duty_cycle: int) -> None:
         ...
