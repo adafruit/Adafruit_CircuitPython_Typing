@@ -24,7 +24,6 @@ class ColorBasedLED(Protocol):
 
     def color(self, value: ColorBasedColorUnion) -> None:
         """Sets the color of the LED"""
-        ...
 
 
 class FillBasedLED(Protocol):
@@ -32,4 +31,3 @@ class FillBasedLED(Protocol):
 
     def fill(self, color: FillBasedColorUnion) -> None:
         """Sets the color of the LED"""
-        ...

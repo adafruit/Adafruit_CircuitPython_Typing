@@ -41,15 +41,12 @@ class CommonSocketType(Protocol):
     def send(self, data: bytes, flags: int = ...) -> None:
         """Send data to the socket. The meaning of the optional flags kwarg is
         implementation-specific."""
-        ...
 
     def settimeout(self, value: Optional[float]) -> None:
         """Set a timeout on blocking socket operations."""
-        ...
 
     def close(self) -> None:
         """Close the socket."""
-        ...
 
 
 class CommonCircuitPythonSocketType(CommonSocketType, Protocol):
@@ -62,7 +59,6 @@ class CommonCircuitPythonSocketType(CommonSocketType, Protocol):
     ) -> None:
         """Connect to a remote socket at the provided (host, port) address. The conntype
         kwarg optionally may indicate SSL or not, depending on the underlying interface."""
-        ...
 
 
 class LegacyCircuitPythonSocketType(CommonCircuitPythonSocketType, Protocol):
@@ -72,7 +68,6 @@ class LegacyCircuitPythonSocketType(CommonCircuitPythonSocketType, Protocol):
         """Receive data from the socket. The return value is a bytes object representing
         the data received. The maximum amount of data to be received at once is specified
         by bufsize."""
-        ...
 
 
 class SupportsRecvWithFlags(Protocol):
@@ -82,7 +77,6 @@ class SupportsRecvWithFlags(Protocol):
         """Receive data from the socket. The return value is a bytes object representing
         the data received. The maximum amount of data to be received at once is specified
         by bufsize. The meaning of the optional flags kwarg is implementation-specific."""
-        ...
 
 
 class SupportsRecvInto(Protocol):
@@ -93,7 +87,6 @@ class SupportsRecvInto(Protocol):
         buffer. If nbytes is not specified (or 0), receive up to the size available in the
         given buffer. The meaning of the optional flags kwarg is implementation-specific.
         Returns the number of bytes received."""
-        ...
 
 
 class CircuitPythonSocketType(
@@ -104,8 +97,6 @@ class CircuitPythonSocketType(
 ):  # pylint: disable=too-many-ancestors
     """Describes the structure every modern CircuitPython socket type must have."""
 
-    ...
-
 
 class StandardPythonSocketType(
     CommonSocketType, SupportsRecvInto, SupportsRecvWithFlags, Protocol
@@ -114,7 +105,6 @@ class StandardPythonSocketType(
 
     def connect(self, address: Union[Tuple[Any, ...], str, bytes]) -> None:
         """Connect to a remote socket at the provided address."""
-        ...
 
 
 SocketType: TypeAlias = Union[
@@ -132,7 +122,6 @@ class InterfaceType(Protocol):
     @property
     def TLS_MODE(self) -> int:  # pylint: disable=invalid-name
         """Constant representing that a socket's connection mode is TLS."""
-        ...
 
 
 SSLContextType: TypeAlias = Union[SSLContext, "_FakeSSLContext"]

@@ -21,20 +21,15 @@ class HTTPProtocol(Protocol):
 
     def get(self, url: str, **kw) -> Response:
         """Send HTTP GET request"""
-        ...
 
     def put(self, url: str, **kw) -> Response:
         """Send HTTP PUT request"""
-        ...
 
     def post(self, url: str, **kw) -> Response:
         """Send HTTP POST request"""
-        ...
 
     def patch(self, url: str, **kw) -> Response:
         """Send HTTP PATCH request"""
-        ...
 
     def delete(self, url: str, **kw) -> Response:
         """Send HTTP DELETE request"""
-        ...

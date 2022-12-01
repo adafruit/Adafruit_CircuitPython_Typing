@@ -21,7 +21,6 @@ class PixelAccess(Protocol):
     # pylint: disable=invalid-name
     def __getitem__(self, xy: Tuple[int, int]) -> int:
         """Get pixels by x, y coordinate"""
-        ...
 
 
 class Image(Protocol):
@@ -30,13 +29,10 @@ class Image(Protocol):
     @property
     def mode(self) -> str:
         """The mode of the image"""
-        ...
 
     @property
     def size(self) -> Tuple[int, int]:
         """The size of the image"""
-        ...
 
     def load(self) -> PixelAccess:
         """Load the image for quick pixel access"""
-        ...

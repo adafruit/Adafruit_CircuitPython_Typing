@@ -66,12 +66,10 @@ class ByteStream(Protocol):
         or if the parameter is not specified in the call,
         the outcome is implementation-dependent.
         """
-        ...
 
     # Should be `, /)`, but not available in Python 3.7.
     def write(self, buf: ReadableBuffer) -> Optional[int]:
         """Write the bytes in ``buf`` to the stream."""
-        ...
 
 
 # These types may not be in adafruit-blinka, so use the string form instead of a resolved name.
