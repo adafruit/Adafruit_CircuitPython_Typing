@@ -53,11 +53,13 @@ WriteableBuffer: TypeAlias = Union[
 
 class ByteStream(Protocol):
     """Protocol for basic I/O operations on a byte stream.
-    Classes which implement this protocol include
+    Classes which implement this protocol include:
+
     * `io.BytesIO`
     * `io.FileIO` (for a file open in binary mode)
     * `busio.UART`
     * `usb_cdc.Serial`
+
     """
 
     # Should be `, /)`, but not available in Python 3.7.
