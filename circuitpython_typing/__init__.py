@@ -17,15 +17,18 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 import array
 from typing import Optional, Union
 
-import alarm
-import audiocore
-import audiomixer
-import audiomp3
-import rgbmatrix
-import synthio
-import ulab
-from alarm.pin import PinAlarm
-from alarm.time import TimeAlarm
+try:
+    import alarm
+    import audiocore
+    import audiomixer
+    import audiomp3
+    import rgbmatrix
+    import synthio
+    import ulab
+    from alarm.pin import PinAlarm
+    from alarm.time import TimeAlarm
+except ImportError:
+    pass
 
 # Protocol was introduced in Python 3.8, TypeAlias in 3.10
 from typing_extensions import Protocol, TypeAlias
