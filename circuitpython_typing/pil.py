@@ -11,8 +11,10 @@ Type annotation definitions for PIL Images.
 * Author(s): Alec Delaney
 """
 
-from typing import Tuple, Optional, Callable
-from typing_extensions import Protocol  # Safety import for Python 3.7
+from typing import Callable, Optional, Tuple
+
+# Protocol was introduced in Python 3.8
+from typing_extensions import Protocol
 
 
 class PixelAccess(Protocol):

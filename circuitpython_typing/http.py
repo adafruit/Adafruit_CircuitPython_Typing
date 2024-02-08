@@ -11,9 +11,10 @@ Type annotation definitions for HTTP and related objects
 * Author(s): Alec Delaney
 """
 
+from adafruit_requests import Response
+
 # Protocol was introduced in Python 3.8.
 from typing_extensions import Protocol
-from adafruit_requests import Response
 
 
 class HTTPProtocol(Protocol):

@@ -13,9 +13,10 @@ from ssl import SSLContext
 from types import ModuleType
 from typing import Any, Optional, Tuple, Union
 
+from adafruit_connection_manager import _FakeSSLContext
+
 # Protocol was introduced in Python 3.8, TypeAlias in 3.10
 from typing_extensions import Protocol, TypeAlias
-
 
 # Based on https://github.com/python/typeshed/blob/master/stdlib/_socket.pyi
 
@@ -126,4 +127,4 @@ class InterfaceType(Protocol):
         """Constant representing that a socket's connection mode is TLS."""
 
 
-SSLContextType: TypeAlias = Union[SSLContext, "_FakeSSLContext"]
+SSLContextType: TypeAlias = Union[SSLContext, _FakeSSLContext]
