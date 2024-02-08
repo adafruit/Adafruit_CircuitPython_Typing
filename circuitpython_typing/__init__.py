@@ -15,9 +15,12 @@ __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
 import array
-from typing import Optional, Union
+from typing import TYPE_CHECKING, Optional, Union
 
-try:
+# Protocol was introduced in Python 3.8, TypeAlias in 3.10
+from typing_extensions import Protocol, TypeAlias
+
+if TYPE_CHECKING:
     import alarm
     import audiocore
     import audiomixer
@@ -28,11 +31,7 @@ try:
     from alarm.pin import PinAlarm
     from alarm.time import TimeAlarm
     from ulab.numpy import ndarray
-except ImportError:
-    pass
 
-# Protocol was introduced in Python 3.8, TypeAlias in 3.10
-from typing_extensions import Protocol, TypeAlias
 
 # Lists below are alphabetized.
 
