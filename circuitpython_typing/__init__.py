@@ -27,12 +27,12 @@ try:
     import ulab
     from alarm.pin import PinAlarm
     from alarm.time import TimeAlarm
+    from ulab.numpy import ndarray
 except ImportError:
     pass
 
 # Protocol was introduced in Python 3.8, TypeAlias in 3.10
 from typing_extensions import Protocol, TypeAlias
-from ulab.numpy import ndarray
 
 # Lists below are alphabetized.
 
