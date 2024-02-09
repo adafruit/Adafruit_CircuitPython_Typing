@@ -52,8 +52,8 @@ ReadableBuffer: TypeAlias = Union[
     bytearray,
     bytes,
     memoryview,
-    rgbmatrix.RGBMatrix,
-    ulab.numpy.ndarray,
+    "rgbmatrix.RGBMatrix",
+    "ulab.numpy.ndarray",
 ]
 """Classes that implement the readable buffer protocol."""
 
@@ -61,8 +61,8 @@ WriteableBuffer: TypeAlias = Union[
     array.array,
     bytearray,
     memoryview,
-    rgbmatrix.RGBMatrix,
-    ulab.numpy.ndarray,
+    "rgbmatrix.RGBMatrix",
+    "ulab.numpy.ndarray",
 ]
 """Classes that implement the writeable buffer protocol."""
 
@@ -144,20 +144,20 @@ class BlockDevice(Protocol):
 # These types may not be in adafruit-blinka, so use the string form instead of a resolved name.
 
 AudioSample: TypeAlias = Union[
-    audiocore.WaveFile,
-    audiocore.RawSample,
-    audiomixer.Mixer,
-    audiomp3.MP3Decoder,
-    synthio.MidiTrack,
+    "audiocore.WaveFile",
+    "audiocore.RawSample",
+    "audiomixer.Mixer",
+    "audiomp3.MP3Decoder",
+    "synthio.MidiTrack",
 ]
 """Classes that implement the audiosample protocol.
 You can play these back with `audioio.AudioOut`, `audiobusio.I2SOut` or `audiopwmio.PWMAudioOut`.
 """
 
-FrameBuffer: TypeAlias = Union[rgbmatrix.RGBMatrix]
+FrameBuffer: TypeAlias = Union["rgbmatrix.RGBMatrix"]
 """Classes that implement the framebuffer protocol."""
 
-Alarm: TypeAlias = Union[alarm.pin.PinAlarm, alarm.time.TimeAlarm]
+Alarm: TypeAlias = Union["alarm.pin.PinAlarm", "alarm.time.TimeAlarm"]
 """Classes that implement alarms for sleeping and asynchronous notification.
 You can use these alarms to wake up from light or deep sleep.
 """
