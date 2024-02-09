@@ -16,7 +16,6 @@ from typing import Any, Optional, Tuple, Union
 # Protocol was introduced in Python 3.8, TypeAlias in 3.10
 from typing_extensions import Protocol, TypeAlias
 
-
 # Based on https://github.com/python/typeshed/blob/master/stdlib/_socket.pyi
 
 __all__ = [
@@ -126,4 +125,18 @@ class InterfaceType(Protocol):
         """Constant representing that a socket's connection mode is TLS."""
 
 
-SSLContextType: TypeAlias = Union[SSLContext, "_FakeSSLContext"]
+# pylint: disable=too-few-public-methods
+class _FakeSSLSocket:
+    """Describes the structure every fake SSL socket type must have."""
+
+
+class _FakeSSLContext:
+    """Describes the structure every fake SSL context type must have."""
+
+    def wrap_socket(
+        self, socket: CircuitPythonSocketType, server_hostname: Optional[str] = None
+    ) -> _FakeSSLSocket:
+        """Wrap socket and return a new one that uses the methods from the original."""
+
+
+SSLContextType: TypeAlias = Union[SSLContext, _FakeSSLContext]

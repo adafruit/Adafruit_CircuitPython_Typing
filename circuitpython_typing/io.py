@@ -38,7 +38,11 @@ class ValueIO(Protocol):
         on the specifics of the class.
         """
 
+    # TODO: this should be `value(self, input_value: float, /)` but can't
+    #   because currently mpy files are built and the `/` param isn't supported
+    #   in micro-python.
+    #   https://github.com/adafruit/Adafruit_CircuitPython_Typing/issues/36
     # pylint: disable=no-self-use,unused-argument
     @value.setter
-    def value(self, input_value: float, /):
+    def value(self, input_value: float):
         ...

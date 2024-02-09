@@ -15,8 +15,24 @@ __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_Typing.git"
 
 import array
-from typing import Union, Optional
-from typing_extensions import Protocol, TypeAlias  # Safety import for Python 3.7
+from typing import TYPE_CHECKING, Optional, Union
+
+# Protocol was introduced in Python 3.8, TypeAlias in 3.10
+from typing_extensions import Protocol, TypeAlias
+
+# pylint: disable=used-before-assignment
+if TYPE_CHECKING:
+    import alarm
+    import audiocore
+    import audiomixer
+    import audiomp3
+    import rgbmatrix
+    import synthio
+    import ulab
+    from alarm.pin import PinAlarm
+    from alarm.time import TimeAlarm
+    from ulab.numpy import ndarray
+
 
 # Lists below are alphabetized.
 
