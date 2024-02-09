@@ -13,8 +13,6 @@ from ssl import SSLContext
 from types import ModuleType
 from typing import Any, Optional, Tuple, Union
 
-from adafruit_connection_manager import _FakeSSLContext
-
 # Protocol was introduced in Python 3.8, TypeAlias in 3.10
 from typing_extensions import Protocol, TypeAlias
 
@@ -125,6 +123,20 @@ class InterfaceType(Protocol):
     @property
     def TLS_MODE(self) -> int:  # pylint: disable=invalid-name
         """Constant representing that a socket's connection mode is TLS."""
+
+
+# pylint: disable=too-few-public-methods
+class _FakeSSLSocket:
+    """Describes the structure every fake SSL socket type must have."""
+
+
+class _FakeSSLContext:
+    """Describes the structure every fake SSL context type must have."""
+
+    def wrap_socket(
+        self, socket: CircuitPythonSocketType, server_hostname: Optional[str] = None
+    ) -> _FakeSSLSocket:
+        """Wrap socket and return a new one that uses the methods from the original."""
 
 
 SSLContextType: TypeAlias = Union[SSLContext, _FakeSSLContext]

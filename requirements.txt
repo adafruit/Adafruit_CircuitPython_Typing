@@ -5,6 +5,5 @@
 
 Adafruit-Blinka
 adafruit-circuitpython-busdevice
-Adafruit-Circuitpython-connectionmanager@git+https://github.com/adafruit/Adafruit_CircuitPython_ConnectionManager@connection-manager
 adafruit-circuitpython-requests
 typing_extensions~=4.0
