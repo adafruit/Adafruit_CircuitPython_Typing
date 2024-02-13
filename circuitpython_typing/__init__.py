@@ -76,16 +76,14 @@ class ByteStream(Protocol):
     * `usb_cdc.Serial`
     """
 
-    # Should be `, /)`, but not available in Python 3.7.
-    def read(self, count: Optional[int] = None) -> Optional[bytes]:
+    def read(self, count: Optional[int] = None, /) -> Optional[bytes]:
         """Read ``count`` bytes from the stream.
         If ``count`` bytes are not immediately available,
         or if the parameter is not specified in the call,
         the outcome is implementation-dependent.
         """
 
-    # Should be `, /)`, but not available in Python 3.7.
-    def write(self, buf: ReadableBuffer) -> Optional[int]:
+    def write(self, buf: ReadableBuffer, /) -> Optional[int]:
         """Write the bytes in ``buf`` to the stream."""
 
 
