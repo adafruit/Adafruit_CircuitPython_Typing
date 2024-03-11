@@ -13,6 +13,7 @@ requires = [
 name = "adafruit-circuitpython-typing"
 description = "Types needed for type annotation that are not in `typing`"
 version = "0.0.0+auto.0"
+requires-python = ">=3.8"
 readme = "README.rst"
 authors = [
     {name = "Adafruit Industries", email = "circuitpython@adafruit.com"}
