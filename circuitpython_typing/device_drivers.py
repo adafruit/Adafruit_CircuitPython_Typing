@@ -10,6 +10,7 @@ Type annotation definitions for device drivers. Used for `adafruit_register`.
 """
 
 from adafruit_bus_device.i2c_device import I2CDevice
+from adafruit_bus_device.spi_device import SPIDevice
 from typing_extensions import Protocol  # Safety import for Python 3.7
 
 
@@ -18,3 +19,10 @@ class I2CDeviceDriver(Protocol):
     """Describes classes that are drivers utilizing `I2CDevice`"""
 
     i2c_device: I2CDevice
+
+
+# pylint: disable=too-few-public-methods
+class SPIDeviceDriver(Protocol):
+    """Describes classes that are drivers utilizing `SPIDevice`"""
+
+    spi_device: SPIDevice
