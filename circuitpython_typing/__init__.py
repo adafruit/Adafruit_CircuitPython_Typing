@@ -119,7 +119,7 @@ class BlockDevice(Protocol):
         * 3 - sync the device (``arg`` is unused)
         * 4 - get a count of the number of blocks, should return an integer (``arg`` is unused)
         * 5 - get the number of bytes in a block, should return an integer,
-            or ``None`` in which case the default value of 512 is used (``arg`` is unused)
+          or ``None`` in which case the default value of 512 is used (``arg`` is unused)
         * 6 - erase a block, arg is the block number to erase
 
         As a minimum ``ioctl(4, ...)`` must be intercepted; for littlefs ``ioctl(6, ...)``
