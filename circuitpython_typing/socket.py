@@ -99,9 +99,7 @@ class CircuitPythonSocketType(
     """Describes the structure every modern CircuitPython socket type must have."""
 
 
-class StandardPythonSocketType(
-    CommonSocketType, SupportsRecvInto, SupportsRecvWithFlags, Protocol
-):
+class StandardPythonSocketType(CommonSocketType, SupportsRecvInto, SupportsRecvWithFlags, Protocol):
     """Describes the structure every standard Python socket type must have."""
 
     def connect(self, address: Union[Tuple[Any, ...], str, bytes]) -> None:

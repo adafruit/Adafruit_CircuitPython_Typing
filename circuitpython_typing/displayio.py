@@ -10,7 +10,9 @@ Type annotation definitions used for displayio related components.
 
 * Author(s): Tim Cocks
 """
+
 from typing import TypeAlias, Union
+
 from busdisplay import BusDisplay
 from epaperdisplay import EPaperDisplay
 from framebufferio import FramebufferDisplay

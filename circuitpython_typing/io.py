@@ -40,5 +40,4 @@ class ValueIO(Protocol):
 
     # pylint: disable=no-self-use,unused-argument
     @value.setter
-    def value(self, input_value: float, /):
-        ...
+    def value(self, input_value: float, /): ...
