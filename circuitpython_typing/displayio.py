@@ -15,6 +15,5 @@ from typing import TypeAlias, Union
 
 from busdisplay import BusDisplay
 from epaperdisplay import EPaperDisplay
-from framebufferio import FramebufferDisplay
 
-AnyDisplay: TypeAlias = Union[BusDisplay, EPaperDisplay, FramebufferDisplay]
+AnyDisplay: TypeAlias = Union[BusDisplay, EPaperDisplay, "framebufferio.FramebufferDisplay"]
