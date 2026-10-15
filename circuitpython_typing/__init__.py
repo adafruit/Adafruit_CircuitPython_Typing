@@ -33,6 +33,7 @@ if TYPE_CHECKING:
     from alarm.time import TimeAlarm
     from ulab.numpy import ndarray
 
+from .camera import CameraSensor
 
 # Lists below are alphabetized.
 
@@ -42,6 +43,7 @@ __all__ = [
     "AudioSample",
     "BlockDevice",
     "ByteStream",
+    "CameraSensor",
     "FrameBuffer",
     "ReadableBuffer",
     "WriteableBuffer",
