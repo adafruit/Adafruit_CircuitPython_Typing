@@ -26,6 +26,7 @@ if TYPE_CHECKING:
     import audiocore
     import audiomixer
     import audiomp3
+    import mipicsi
     import rgbmatrix
     import synthio
     import ulab
@@ -46,6 +47,7 @@ __all__ = [
     "CameraSensor",
     "FrameBuffer",
     "ReadableBuffer",
+    "VideoSource",
     "WriteableBuffer",
 ]
 
@@ -128,6 +130,12 @@ You can play these back with `audioio.AudioOut`, `audiobusio.I2SOut` or `audiopw
 
 FrameBuffer: TypeAlias = Union["rgbmatrix.RGBMatrix"]
 """Classes that implement the framebuffer protocol."""
+
+VideoSource: TypeAlias = Union["mipicsi.Camera"]
+"""Classes that implement the videosource protocol. `videocore.VideoBuffer`
+streams frames from these into a framebuffer. The protocol is driven
+entirely by the VideoBuffer through internal methods; there is no
+direct Python API for the stream itself."""
 
 Alarm: TypeAlias = Union["alarm.pin.PinAlarm", "alarm.time.TimeAlarm"]
 """Classes that implement alarms for sleeping and asynchronous notification.
