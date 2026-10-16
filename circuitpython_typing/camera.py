@@ -6,7 +6,7 @@
 `circuitpython_typing.camera`
 ================================================================================
 
-Type annotation definitions for camera sensor drivers. Used by `mipicsi`.
+Type annotation definitions for camera sensor drivers. Used by ``mipicsi``.
 
 * Author(s): Scott Shawcroft
 """
@@ -20,16 +20,16 @@ if TYPE_CHECKING:
 
 
 class CameraSensor(Protocol):
-    """Protocol for a camera sensor driver compatible with `mipicsi.Camera`.
+    """Protocol for a camera sensor driver compatible with ``mipicsi.Camera``.
 
     A sensor driver provides these properties and methods. The
-    `mipicsi.Camera` object reads the properties to configure the MIPI
+    ``mipicsi.Camera`` object reads the properties to configure the MIPI
     CSI-2 receiver for the sensor's current mode, and calls ``_start``
     and ``_stop`` itself as streams start and stop; user code should
     not call them. See the sensor properties documentation for what
     each value should describe.
 
-    ``CameraSensor`` drivers include `sc2336.SC2336`.
+    ``CameraSensor`` drivers include ``adafruit_sc2336.SC2336``.
     """
 
     @property
@@ -42,7 +42,7 @@ class CameraSensor(Protocol):
 
     @property
     def pixel_format(self) -> "mipicsi.PixelFormat":
-        """The `mipicsi.PixelFormat` of the frames the sensor transmits."""
+        """The ``mipicsi.PixelFormat`` of the frames the sensor transmits."""
 
     @property
     def lane_bit_rate_mbps(self) -> int:
@@ -54,16 +54,16 @@ class CameraSensor(Protocol):
 
     @property
     def bayer_order(self) -> "mipicsi.BayerOrder":
-        """The `mipicsi.BayerOrder` of the sensor's RAW output."""
+        """The ``mipicsi.BayerOrder`` of the sensor's RAW output."""
 
     def _start(self) -> None:
         """Take the sensor out of standby so it streams frames.
-        Internal: the `mipicsi.Camera` receiver calls it automatically
-        when a `videocore.VideoBuffer` starts playing the camera.
+        Internal: the ``mipicsi.Camera`` receiver calls it automatically
+        when a ``videocore.VideoBuffer`` starts playing the camera.
         """
 
     def _stop(self) -> None:
         """Put the sensor into standby so it stops streaming.
-        Internal: the `mipicsi.Camera` receiver calls it automatically
+        Internal: the ``mipicsi.Camera`` receiver calls it automatically
         when playback stops.
         """

@@ -132,7 +132,7 @@ FrameBuffer: TypeAlias = Union["rgbmatrix.RGBMatrix"]
 """Classes that implement the framebuffer protocol."""
 
 VideoSource: TypeAlias = Union["mipicsi.Camera"]
-"""Classes that implement the videosource protocol. `videocore.VideoBuffer`
+"""Classes that implement the videosource protocol. ``videocore.VideoBuffer``
 streams frames from these into a framebuffer. The protocol is driven
 entirely by the VideoBuffer through internal methods; there is no
 direct Python API for the stream itself."""
