@@ -7,5 +7,8 @@
 .. automodule:: circuitpython_typing
     :members:
 
+.. automodule:: circuitpython_typing.camera
+    :members:
+
 .. automodule:: circuitpython_typing.socket
     :members:
